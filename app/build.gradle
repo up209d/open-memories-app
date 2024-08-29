@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    //noinspection GradleDependency
+    compileSdkVersion 10
+    // buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.github.ma1co.pmcademo.app"
+        minSdkVersion 10
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 10
+        //versionCode 1
+        //versionName 1
+        versionCode "git -C ${projectDir} rev-list --first-parent --count HEAD".execute().text.trim().toInteger()
+        versionName "git -C ${projectDir} describe --always --tags --dirty".execute().text.trim().replaceAll("^v", "")
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_6
+        targetCompatibility JavaVersion.VERSION_1_6
+    }
+
+    lintOptions {
+        /**
+         * Set whether lint should check for fatal errors during release builds. Default is true.
+         * If issues with severity "fatal" are found, the release build is aborted.
+         */
+        checkReleaseBuilds = false
+        abortOnError = false
+        tasks.lint.enabled = false
+    }
+}
+
+android.applicationVariants.configureEach { variant ->
+    variant.outputs.each { output ->
+        def apkName = "PMCADemo-${output.baseName}-${variant.versionName}.apk"
+        output.outputFileName = apkName
+    }
+}
+
+dependencies {
+    implementation 'com.github.ma1co.OpenMemories-Framework:framework:-SNAPSHOT'
+    compileOnly 'com.github.ma1co.OpenMemories-Framework:stubs:-SNAPSHOT'
+    implementation 'com.nanohttpd:nanohttpd:2.1.1'
+}
