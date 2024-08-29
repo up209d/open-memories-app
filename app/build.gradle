@@ -6,7 +6,7 @@ android {
     // buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.github.ma1co.pmcademo.app"
+        applicationId "com.github.up209d.openmemories.app"
         minSdkVersion 10
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 10
@@ -34,7 +34,7 @@ android {
 
 android.applicationVariants.configureEach { variant ->
     variant.outputs.each { output ->
-        def apkName = "PMCADemo-${output.baseName}-${variant.versionName}.apk"
+        def apkName = "UPOpenMemoriesApp-${output.baseName}-${variant.versionName}.apk"
         output.outputFileName = apkName
     }
 }

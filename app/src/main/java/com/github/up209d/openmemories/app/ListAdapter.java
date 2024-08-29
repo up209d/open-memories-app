@@ -1,4 +1,4 @@
-package com.github.ma1co.pmcademo.app;
+package com.github.up209d.openmemories.app;
 
 import android.content.Context;
 import android.view.LayoutInflater;

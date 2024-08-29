@@ -1,4 +1,4 @@
-package com.github.ma1co.pmcademo.app;
+package com.github.up209d.openmemories.app;
 
 import android.os.Environment;
 
@@ -6,7 +6,7 @@ import java.io.*;
 
 public class Logger {
     public static File getFile() {
-        return new File(Environment.getExternalStorageDirectory(), "PMCADEMO/LOG.TXT");
+        return new File(Environment.getExternalStorageDirectory(), "UPOpenMemoriesApp/LOG.TXT");
     }
 
     protected static void log(String msg) {
