@@ -1,9 +1,5 @@
 # Sony Open Memories App #
-
 Experiment with Sony PlayMemories Android App by OpenMemories framework
-
-## Installation ##
-Install it here: [sony-pmca.appspot.com/apps](https://sony-pmca.appspot.com/apps)
 
 ## Requirements ##
 Android Studio 2024.1.1
