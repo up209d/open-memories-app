@@ -2,13 +2,19 @@ apply plugin: 'com.android.application'
 
 android {
     //noinspection GradleDependency
+    //compileSdkVersion 10
+    //noinspection GradleDependency
     compileSdkVersion 10
-    // buildToolsVersion "25.0.2"
+    buildToolsVersion '30.0.2'
+    ndkVersion '21.4.7075529'
 
     defaultConfig {
         applicationId "com.github.up209d.openmemories.app"
+        //minSdkVersion 10
         minSdkVersion 10
         //noinspection ExpiredTargetSdkVersion
+        //targetSdkVersion 10
+        //noinspection EditedTargetSdkVersion,ExpiredTargetSdkVersion
         targetSdkVersion 10
         //versionCode 1
         //versionName 1
@@ -16,19 +22,31 @@ android {
         versionName "git -C ${projectDir} describe --always --tags --dirty".execute().text.trim().replaceAll("^v", "")
         ndk {
             //noinspection ChromeOsAbiSupport
+            //abiFilters 'x86'
+            //noinspection ChromeOsAbiSupport
             abiFilters 'armeabi-v7a', 'x86'
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+            }
         }
     }
 
     externalNativeBuild {
         cmake {
-            path "src/main/cpp/CMakeLists.txt"
+            path 'src/main/cpp/CMakeLists.txt'
+            version '3.10.2'
+//            version '3.18.1'
+//            version '3.22.1'
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_6
-        targetCompatibility JavaVersion.VERSION_1_6
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     lintOptions {
@@ -50,6 +68,7 @@ android.applicationVariants.configureEach { variant ->
 }
 
 dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.github.ma1co.OpenMemories-Framework:framework:-SNAPSHOT'
     compileOnly 'com.github.ma1co.OpenMemories-Framework:stubs:-SNAPSHOT'
     implementation 'com.nanohttpd:nanohttpd:2.1.1'

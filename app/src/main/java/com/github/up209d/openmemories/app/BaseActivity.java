@@ -3,12 +3,14 @@ package com.github.up209d.openmemories.app;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.KeyEvent;
+import android.view.ViewGroup;
+
 import com.github.ma1co.openmemories.framework.DateTime;
 import com.github.ma1co.openmemories.framework.DeviceInfo;
 import com.github.ma1co.openmemories.framework.DisplayManager;
 import com.sony.scalar.sysutil.ScalarInput;
 
-public class BaseActivity extends Activity implements DisplayManager.Listener {
+public abstract class BaseActivity extends Activity implements DisplayManager.Listener {
     public static final String NOTIFICATION_DISPLAY_CHANGED = "NOTIFICATION_DISPLAY_CHANGED";
 
     private DisplayManager displayManager;

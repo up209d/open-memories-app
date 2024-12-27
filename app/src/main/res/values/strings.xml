@@ -20,6 +20,10 @@
     <string name="category">Category</string>
     <string name="productCode">Product code</string>
     <string name="serial">Serial number</string>
+    <string name="internal_free_space">Internal Free space</string>
+    <string name="external_free_space">External Free space</string>
+    <string name="total_ram">Total RAM</string>
+    <string name="free_ram">Free RAM</string>
     <string name="firmwareVersion">Firmware</string>
     <string name="hardwareVersion">Hardware version</string>
     <string name="apiVersion">Api version</string>

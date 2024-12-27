@@ -3,17 +3,20 @@ package com.github.up209d.openmemories.app;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     static {
         System.loadLibrary("native-lib");
+        new File(Environment.getExternalStorageDirectory(), "UPOpenMemoriesApp");
     }
 
     protected class ActivityListItem extends ListAdapter.ListItem {
@@ -36,16 +39,16 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     }
 
     protected ActivityListItem activities[] = {
+            new ActivityListItem(R.string.title_activity_playback, PlaybackActivity.class),
+            new ActivityListItem(R.string.title_activity_property, PropertyActivity.class),
             new ActivityListItem(R.string.title_activity_camera, CameraActivity.class),
             new ActivityListItem(R.string.title_activity_key_event, KeyEventActivity.class),
-            new ActivityListItem(R.string.title_activity_property, PropertyActivity.class),
             new ActivityListItem(R.string.title_activity_time, TimeActivity.class),
             new ActivityListItem(R.string.title_activity_wifi, WifiActivity.class),
             new ActivityListItem(R.string.title_activity_wifi_setting, WifiSettingActivity.class),
             new ActivityListItem(R.string.title_activity_wifi_direct, WifiDirectActivity.class),
             new ActivityListItem(R.string.title_activity_display, DisplayActivity.class),
             new ActivityListItem(R.string.title_activity_led, LedActivity.class),
-            new ActivityListItem(R.string.title_activity_playback, PlaybackActivity.class),
             new ActivityListItem(R.string.title_activity_install, InstallActivity.class),
     };
 
