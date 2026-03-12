@@ -4,7 +4,7 @@ android {
     //noinspection GradleDependency
     //compileSdkVersion 10
     //noinspection GradleDependency
-    compileSdkVersion 10
+    compileSdkVersion 16
     buildToolsVersion '30.0.2'
     ndkVersion '21.4.7075529'
 
