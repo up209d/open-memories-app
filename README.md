@@ -2,7 +2,7 @@
 Experiment with Sony PlayMemories Android App by OpenMemories framework
 
 ## Requirements ##
-- Android Studio 2024.1.1
+- Android Studio 2024.1.1 https://developer.android.com/studio/archive
 - Configure Android Studio > Gradle JDK as Temurin `1.8` - Java 8 `1.8.0_422`
 - Using SDK 16 (Android 4.1)
 - Using NDK `21.4.7075529`
@@ -27,6 +27,7 @@ Set window global environment JAVA_HOME!
 ./gradlew build
 ```
 
+![android-studio-2024-1-1.png](android-studio-2024-1-1.png)
 ![android-build-tool-30.png](android-build-tool-30.png)
 ![android-cmake-3.png](android-cmake-3.png)
 ![android-jdk-8.png](android-jdk-8.png)
